@@ -1,7 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-
 import Headers from "@/components/headers";
 import PageTransitions from "@/components/Pagetransitions";
 import StairTransitions from "@/components/stairTransitions";
@@ -25,15 +23,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-primary text-white `}
       >
-       <Headers></Headers>
-       <StairTransitions></StairTransitions>
-
-       <PageTransitions>
-         {children}
-       </PageTransitions>
+        <Headers />
+        
        
+        <StairTransitions />
+        
+    
+        <PageTransitions>
+          {children}
+        </PageTransitions>
       </body>
     </html>
   );
