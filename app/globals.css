@@ -119,4 +119,25 @@
   body {
     @apply bg-background text-foreground;
   }
+  .h1{
+    @apply text-[48px] md:text-[70px] lg:text-[100px] leading-[1.1] font-semibold
+  }
+  .h2{
+    @apply text-[36px] md:text-[48px] leading-[1.1] font-semibold
+  }
+  .h3{
+    @apply text-[20px] md:text-[24px] leading-[1.1] font-semibold
+  }
+  .text{
+    @apply text-[#39e629]
+  }
+ .bg{
+    @apply bg-[#39e629]
+  }
+ .br{
+    @apply border-[#39e629]
+  }
+ .ho{
+    @apply hover:bg-[#39e629]
+  }
 }

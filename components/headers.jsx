@@ -6,11 +6,11 @@ import MobileNab from './mobileNab';
 
 const Headers = () => {
     return (
-        <header className='py-8 xl:py-12'>
+        <header className='py-4 px-4 xl:py-6'>
             <div className='container mx-auto flex justify-between items-center'>
                 <Link href='/'>
                     <h1 className='text-4xl font-semibold'>
-                        Luke<span className='text-[#50e513] text-[40px]'>.</span>
+                        Tarek<span className='text-[#50e513] ml-1 text-[50px]'>.</span>
                     </h1>
                 </Link>
                 
