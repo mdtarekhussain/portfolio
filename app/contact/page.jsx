@@ -33,10 +33,10 @@ const Contact = () => {
         initial={{opacity:0}}
         animate={{opacity:1,transition:{delay:2.4,duration:0.4,ease:'easeIn'}}}
         >
-          <div className='container mx-auto'>
+          <div className='container mx-auto '>
             <div className='flex flex-col lg:flex-row gap-[30px]'>
 {/* form */}
-                <div className='lg:h-[54%] order-2 lg:order-none'>
+                <div className='lg:h-[54%] px-3 pb-4 order-2 lg:order-none'>
                     <form action="" className='flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl'> 
                         <h1 className='text-4xl text'>Let's work together</h1>
                         <p className='text-white/60'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab laborum deserunt, magnam eius incidunt quidem cum alias</p>
@@ -52,21 +52,21 @@ const Contact = () => {
                 </div>
                 {/* info */}
 
-                <div className='flex-1 flex items-center lg:justify-end order-1 lg:order-none mb-8 lg:mb-0'> 
-                    <ul className='flex flex-col gap-10 '>
-                        {info.map((item,index)=>{
-                            return <li key={index} className='flex items-center gap-6'>
-                                <div className='w-[52px] h-[52px] lg:w-[72px] lg:h-[72px] bg-[#27272c] text rounded-md flex items-center justify-center'>
-                                    <div className='text-[30px]'>{item.icon}</div>
-                                </div>
-                                <div className='flex-1'>
-                                 <p className='text-white/60'>{item.title}</p>
-                                 <h1 className='text-xl'>{item.description}</h1>
-                                </div>
-                            </li>
-                        })}
-                    </ul>
+               <div className='flex-1 flex items-center lg:justify-end order-1 lg:order-none mb-8 lg:mb-0'> 
+    <ul className='flex flex-col gap-6 w-full max-w-md px-4 lg:px-0'>
+        {info.map((item, index) => (
+            <li key={index} className='flex items-start gap-3 sm:gap-4'>
+                <div className='w-[36px] h-[36px] sm:w-[42px] sm:h-[42px] lg:w-[72px] lg:h-[72px] bg-[#27272c] text rounded-md flex items-center justify-center flex-shrink-0'>
+                    <div className='text-[20px] sm:text-[24px] lg:text-[30px]'>{item.icon}</div>
                 </div>
+                <div className='flex-1 min-w-0'>
+                    <p className='text-white/60 text-xs sm:text-sm lg:text-base truncate'>{item.title}</p>
+                    <h1 className='text-base sm:text-lg lg:text-xl break-words'>{item.description}</h1>
+                </div>
+            </li>
+        ))}
+    </ul>
+</div>
             </div>
 
           </div>

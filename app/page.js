@@ -1,12 +1,33 @@
+"use client"; // এই লাইনটি অবশ্যই প্রথমে থাকতে হবে
+
 import Photo from "@/components/photo";
 import Socials from "@/components/socials";
 import Stats from "@/components/stats";
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
+import { useState } from "react"; // useState ইমপোর্ট করুন
 
 export default function Home() {
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const handleDownload = async () => {
+    setIsDownloading(true);
+    try {
+      const link = document.createElement('a');
+      link.href = '/assets/tarek.pdf';
+      link.download = 'tarek-cv.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Download failed:', error);
+    } finally {
+      setIsDownloading(false);
+    }
+  };
+
   return (
-    <section className="h-full ">
+    <section className="h-full">
       <div className="container mx-auto h-full">
         <div className="flex flex-col md:flex-row items-center justify-between xl:pt-8 xl:pb-24 gap-8">
           {/* Left Text Section */}
@@ -27,8 +48,10 @@ export default function Home() {
                 variant="outline"
                 size="lg"
                 className="uppercase flex items-center gap-2"
+                onClick={handleDownload}
+                disabled={isDownloading}
               >
-                <span>Download CV</span>
+                <span>{isDownloading ? 'Downloading...' : 'Download CV'}</span>
                 <FiDownload className="text-[18px]" />
               </Button>
 
@@ -47,7 +70,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Stats></Stats>
+      <Stats />
     </section>
   );
 }
